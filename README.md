@@ -12,3 +12,9 @@
 1. 字体和大小
 2. 颜色
 3. 标题内容
+### 菜单栏
+1. 菜单按钮字体
+2. 菜单按钮高度
+3. 菜单栏宽度
+4. 菜单按钮以List<Tuple<MenuButton, bool>> MenuButtons进行管理,其中MenuButton是单个菜单按钮，bool表示该按钮是放在上方（True）还是放在下方（False）
+5. 菜单按钮类是./Core/custom_class/MenuButton.cs
