@@ -1,4 +1,4 @@
-﻿using ProjectMS.Core.custom_class;
+﻿using ProjectMS.Core.custom_control;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

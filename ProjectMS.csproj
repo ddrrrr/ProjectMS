@@ -45,10 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\custom_class\MenuButton.cs">
+    <Compile Include="Core\custom_control\MenuButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Core\custom_class\MenuButton.Designer.cs">
+    <Compile Include="Core\custom_control\MenuButton.Designer.cs">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
@@ -59,7 +59,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Core\custom_class\MenuButton.resx">
+    <EmbeddedResource Include="Core\custom_control\MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">

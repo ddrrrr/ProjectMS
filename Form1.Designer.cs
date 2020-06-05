@@ -31,6 +31,9 @@
             this.Top_panel = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
             this.Left_panel = new System.Windows.Forms.Panel();
+            this.Button_panel = new System.Windows.Forms.Panel();
+            this.Right_panel = new System.Windows.Forms.Panel();
+            this.Middle_panel = new System.Windows.Forms.Panel();
             this.Top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,8 +61,32 @@
             this.Left_panel.Dock = System.Windows.Forms.DockStyle.Left;
             this.Left_panel.Location = new System.Drawing.Point(0, 100);
             this.Left_panel.Name = "Left_panel";
-            this.Left_panel.Size = new System.Drawing.Size(200, 461);
+            this.Left_panel.Size = new System.Drawing.Size(200, 361);
             this.Left_panel.TabIndex = 1;
+            // 
+            // Button_panel
+            // 
+            this.Button_panel.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.Button_panel.Location = new System.Drawing.Point(0, 461);
+            this.Button_panel.Name = "Button_panel";
+            this.Button_panel.Size = new System.Drawing.Size(784, 100);
+            this.Button_panel.TabIndex = 2;
+            // 
+            // Right_panel
+            // 
+            this.Right_panel.Dock = System.Windows.Forms.DockStyle.Right;
+            this.Right_panel.Location = new System.Drawing.Point(584, 100);
+            this.Right_panel.Name = "Right_panel";
+            this.Right_panel.Size = new System.Drawing.Size(200, 361);
+            this.Right_panel.TabIndex = 3;
+            // 
+            // Middle_panel
+            // 
+            this.Middle_panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.Middle_panel.Location = new System.Drawing.Point(200, 100);
+            this.Middle_panel.Name = "Middle_panel";
+            this.Middle_panel.Size = new System.Drawing.Size(384, 361);
+            this.Middle_panel.TabIndex = 4;
             // 
             // Form1
             // 
@@ -67,8 +94,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.Middle_panel);
+            this.Controls.Add(this.Right_panel);
             this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.Top_panel);
+            this.Controls.Add(this.Button_panel);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Top_panel.ResumeLayout(false);
@@ -82,6 +112,9 @@
         private System.Windows.Forms.Panel Top_panel;
         private System.Windows.Forms.Label Title;
         private System.Windows.Forms.Panel Left_panel;
+        private System.Windows.Forms.Panel Button_panel;
+        private System.Windows.Forms.Panel Right_panel;
+        private System.Windows.Forms.Panel Middle_panel;
     }
 }
 

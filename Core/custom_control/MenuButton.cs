@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProjectMS.Core.custom_class
+namespace ProjectMS.Core.custom_control
 {
     public partial class MenuButton : UserControl
     {

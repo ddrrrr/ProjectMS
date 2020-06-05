@@ -1,4 +1,4 @@
-﻿namespace ProjectMS.Core.custom_class
+﻿namespace ProjectMS.Core.custom_control
 {
     partial class MenuButton
     {
