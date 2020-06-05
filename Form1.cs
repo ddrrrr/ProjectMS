@@ -1,4 +1,5 @@
 ﻿using ProjectMS.Core.custom_control;
+using ProjectMS.Core.ErrorManager;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,12 +14,14 @@ namespace ProjectMS
 {
     public partial class Form1 : Form
     {
+        ErrorForm errorform = new ErrorForm();
         public Form1()
         {
             InitializeComponent();
             InitForm();
             InitTitle();
             InitMenu();
+            ChgFrm(Button_panel, errorform);
         }
 
         #region 程序可设置内容
@@ -98,15 +101,15 @@ namespace ProjectMS
         /// 主窗口更改画面
         /// </summary>
         /// <param name="frm"></param>
-        //private void ChgMainFrm(Form frm)
-        //{
-        //    frm.TopLevel = false;
-        //    frm.FormBorderStyle = FormBorderStyle.None;
-        //    frm.Dock = DockStyle.Fill;
-        //    splitContainer1.Panel1.Controls.Clear();
-        //    splitContainer1.Panel1.Controls.Add(frm);
-        //    frm.Show();
-        //}
+        private void ChgFrm(Panel p,Form frm)
+        {
+            frm.TopLevel = false;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.Dock = DockStyle.Fill;
+            p.Controls.Clear();
+            p.Controls.Add(frm);
+            frm.Show();
+        }
         #endregion
         #endregion
 
