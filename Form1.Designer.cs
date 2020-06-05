@@ -30,6 +30,7 @@
         {
             this.Top_panel = new System.Windows.Forms.Panel();
             this.Title = new System.Windows.Forms.Label();
+            this.Left_panel = new System.Windows.Forms.Panel();
             this.Top_panel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,12 +53,21 @@
             this.Title.TabIndex = 0;
             this.Title.Text = "label1";
             // 
+            // Left_panel
+            // 
+            this.Left_panel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.Left_panel.Location = new System.Drawing.Point(0, 100);
+            this.Left_panel.Name = "Left_panel";
+            this.Left_panel.Size = new System.Drawing.Size(200, 461);
+            this.Left_panel.TabIndex = 1;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.Left_panel);
             this.Controls.Add(this.Top_panel);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -71,6 +81,7 @@
 
         private System.Windows.Forms.Panel Top_panel;
         private System.Windows.Forms.Label Title;
+        private System.Windows.Forms.Panel Left_panel;
     }
 }
 
