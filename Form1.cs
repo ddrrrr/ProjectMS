@@ -15,6 +15,12 @@ namespace ProjectMS
         public Form1()
         {
             InitializeComponent();
+            // 标题
+            Top_panel.Height = 80;
+            Title.Font = new Font("宋体", 24);
+            Title.Text = "轴承健康监控及剩余寿命预测";
+            Title.ForeColor = Color.White;
+            
         }
     }
 }
