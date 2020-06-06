@@ -66,13 +66,29 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\CardSetting\CardDemo.cs" />
+    <Compile Include="Core\CardSetting\CardSettingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\CardSetting\CardSettingFrm.Designer.cs">
+      <DependentUpon>CardSettingFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\CardSetting\CardSettingManager.cs" />
     <Compile Include="Core\CardSetting\ICard.cs" />
+    <Compile Include="Core\CardSetting\OneCardSetting.cs" />
+    <Compile Include="Core\CardSetting\OneSignalSettingFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\CardSetting\OneSignalSettingFrm.Designer.cs">
+      <DependentUpon>OneSignalSettingFrm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Core\custom_control\MenuButton.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Core\custom_control\MenuButton.Designer.cs">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </Compile>
+    <Compile Include="Core\DataSet\CollectDataSet.cs" />
+    <Compile Include="Core\DataSet\SignalDataInRam.cs" />
     <Compile Include="Core\ErrorManager\ErrorForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +96,8 @@
       <DependentUpon>ErrorForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Core\ErrorManager\ErrorManager.cs" />
+    <Compile Include="Core\PropertyBase\CustomInt.cs" />
+    <Compile Include="Core\PropertyBase\CustomString.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +106,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Core\CardSetting\CardSettingFrm.resx">
+      <DependentUpon>CardSettingFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\CardSetting\OneSignalSettingFrm.resx">
+      <DependentUpon>OneSignalSettingFrm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Core\custom_control\MenuButton.resx">
       <DependentUpon>MenuButton.cs</DependentUpon>
     </EmbeddedResource>

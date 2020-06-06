@@ -1,4 +1,5 @@
-﻿using ProjectMS.Core.custom_control;
+﻿using ProjectMS.Core.CardSetting;
+using ProjectMS.Core.custom_control;
 using ProjectMS.Core.ErrorManager;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace ProjectMS
         private void InitTitle()
         {
             Top_panel.Height = 80;
-            Title.AutoSize = false;
+            Title.AutoSize = false; //可以让文本框随窗体变化，而不是随字体大小变化
             Title.TextAlign = ContentAlignment.MiddleLeft;
             Title.Font = new Font("宋体", 24);
             Title.Text = "轴承健康监控及剩余寿命预测系统";
@@ -58,6 +59,11 @@ namespace ProjectMS
             //  添加菜单按钮
             var 主界面Menu = new MenuButton(menu_font, "主界面", menu_height);
             MenuButtons.Add(new Tuple<MenuButton, bool>(主界面Menu,true));
+
+            var 设置Menu = new MenuButton(menu_font, "设置", menu_height);
+            MenuButtons.Add(new Tuple<MenuButton, bool>(设置Menu, true));
+            设置Menu.Click += 设置Menu_Click;
+
             var 帮助Menu = new MenuButton(menu_font, "帮助", menu_height);
             MenuButtons.Add(new Tuple<MenuButton, bool>(帮助Menu, false));
 
@@ -69,15 +75,26 @@ namespace ProjectMS
                 {
                     x.Item1.Dock = DockStyle.Top;
                     Left_panel.Controls.Add(x.Item1);
+                    Left_panel.Controls.SetChildIndex(x.Item1, 0);
                 }
                 else
                 {
                     x.Item1.Dock = DockStyle.Bottom;
                     Left_panel.Controls.Add(x.Item1);
+                    Left_panel.Controls.SetChildIndex(x.Item1, 0);
                 }
             }
 
         }
+
+        CardSettingFrm cardsettingfrm = new CardSettingFrm();
+        private void 设置Menu_Click(object sender, EventArgs e)
+        {
+            MenuButton b = (MenuButton)sender;
+            if (b.Btnchecked)
+                ChgFrm(Middle_panel, cardsettingfrm);
+        }
+
         /// <summary>
         /// 当随便一个菜单按钮按下之后，取消其他已经按下的菜单按钮
         /// </summary>

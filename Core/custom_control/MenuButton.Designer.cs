@@ -38,7 +38,7 @@
             this.ButtonText.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonText.Location = new System.Drawing.Point(0, 0);
             this.ButtonText.Name = "ButtonText";
-            this.ButtonText.Size = new System.Drawing.Size(150, 150);
+            this.ButtonText.Size = new System.Drawing.Size(652, 103);
             this.ButtonText.TabIndex = 0;
             this.ButtonText.Text = "label1";
             this.ButtonText.Click += new System.EventHandler(this.buttonText_Click);
@@ -50,7 +50,7 @@
             this.ButtonBackPic.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ButtonBackPic.Location = new System.Drawing.Point(0, 0);
             this.ButtonBackPic.Name = "ButtonBackPic";
-            this.ButtonBackPic.Size = new System.Drawing.Size(150, 150);
+            this.ButtonBackPic.Size = new System.Drawing.Size(652, 103);
             this.ButtonBackPic.TabIndex = 1;
             this.ButtonBackPic.TabStop = false;
             this.ButtonBackPic.Click += new System.EventHandler(this.buttonText_Click);
@@ -64,6 +64,7 @@
             this.Controls.Add(this.ButtonText);
             this.Controls.Add(this.ButtonBackPic);
             this.Name = "MenuButton";
+            this.Size = new System.Drawing.Size(652, 103);
             this.Load += new System.EventHandler(this.MenuButton_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ButtonBackPic)).EndInit();
             this.ResumeLayout(false);

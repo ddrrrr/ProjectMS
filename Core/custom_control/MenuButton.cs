@@ -20,6 +20,8 @@ namespace ProjectMS.Core.custom_control
             this.BackColor = Color.Transparent;
             this.Height = buttonheight;
             ButtonText.Font = buttonfont;
+            ButtonBackPic.SizeMode = PictureBoxSizeMode.StretchImage;   //图片自动拉伸填满空间
+
         }
 
         public MenuButton(Font buttonfont, string text, int buttonheight):this(buttonfont,buttonheight)
