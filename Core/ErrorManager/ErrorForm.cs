@@ -13,15 +13,29 @@ namespace ProjectMS.Core.ErrorManager
 {
     public partial class ErrorForm : Form
     {
+        Dictionary<string, bool> StateSelect;
         public ErrorForm()
         {
             InitializeComponent();
             this.BackColor = SystemColors.ControlDarkDark;
+            this.ForeColor = SystemColors.ControlLightLight;
+            StateSelect = new Dictionary<string, bool>();
+            InitSelectWindow();
             InitErrorGrid();
             ErrorLogManager.ErrorRasied += ErrorLogManager_ErrorRasied;
             var historyerror = ErrorLogManager.GetHistoryError();
             foreach (var x in historyerror)
                 AddError(x.Item2, x.Item1);
+        }
+        private void InitSelectWindow()
+        {
+            SelectgroupBox.ForeColor = this.ForeColor;
+            SelectgroupBox.BackColor = this.BackColor;
+            SelectcheckedListBox.BackColor = this.BackColor;
+            SelectcheckedListBox.ForeColor = this.ForeColor;
+            SelectcheckedListBox.BorderStyle = BorderStyle.None;
+            foreach (string s in Enum.GetNames(typeof(ErrorSerious)))
+                SelectcheckedListBox.Items.Add(s,true);
         }
 
         private void ErrorLogManager_ErrorRasied(ErrorBase obj)
@@ -50,6 +64,8 @@ namespace ProjectMS.Core.ErrorManager
             }
             ErrorGridview[2, idx].Value = err.ErrorReason;
             ErrorGridview[3, idx].Value = err.Resolution;
+            if (!StateSelect[err.Serious.ToString()])
+                ErrorGridview.Rows[idx].Visible = false;
         }
 
         private void InitErrorGrid()
@@ -90,6 +106,42 @@ namespace ProjectMS.Core.ErrorManager
             dataGridViewCellStyle2.BackColor = SystemColors.ControlDarkDark;
             dataGridViewCellStyle2.ForeColor = SystemColors.ControlLightLight;
             ErrorGridview.RowsDefaultCellStyle = dataGridViewCellStyle2;
+        }
+
+        private void Visiblebutton_Click(object sender, EventArgs e)
+        {
+            Settingpanel.Visible = !Settingpanel.Visible;
+            if (Settingpanel.Visible)
+                Visiblebutton.Text = "▶";
+            else
+                Visiblebutton.Text = "◀";
+        }
+
+        private void SelectcheckedListBox_SelectedValueChanged(object sender, EventArgs e)
+        {
+            var items = SelectcheckedListBox.CheckedItems;
+        }
+
+        private void SelectcheckedListBox_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            var statechange = e.NewValue;
+            var value = SelectcheckedListBox.Items[e.Index];
+            if (StateSelect.ContainsKey(value.ToString()))
+                StateSelect[value.ToString()] = !StateSelect[value.ToString()];
+            else
+                StateSelect.Add(value.ToString(), statechange == CheckState.Checked ? true : false);
+            
+            for (int i = 0; i < ErrorGridview.Rows.Count; i++)
+                if (StateSelect[ErrorGridview[1, i].Value.ToString()])
+                    ErrorGridview.Rows[i].Visible = true;
+                else
+                    ErrorGridview.Rows[i].Visible = false;
+        }
+
+        private void Cleanbutton_Click(object sender, EventArgs e)
+        {
+            while (ErrorGridview.Rows.Count != 0)
+                ErrorGridview.Rows.RemoveAt(0);
         }
     }
 }

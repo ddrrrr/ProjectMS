@@ -20,3 +20,4 @@
 5. 菜单按钮类是./Core/custom_class/MenuButton.cs
 ### 警报栏
 新建ErrorManager类，添加需要的错误类型，然后raise相关错误就可以出现在警报栏上
+隐藏栏目，包括清除所有和筛选功能
