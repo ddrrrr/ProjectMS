@@ -40,38 +40,40 @@ namespace ProjectMS.Core.custom_control
         {
             if (obj)
             {
-                ButtonBackPic.Image = backImageMove;
+                ButtonBackPic.Image = backImageT;
+                ButtonBackPic.BorderStyle = BorderStyle.Fixed3D;
                 ButtonText.ForeColor = Color.Orange;
             }
             else
             {
-                ButtonBackPic.Image = backImageLeave;
+                ButtonBackPic.Image = backImageF;
+                ButtonBackPic.BorderStyle = BorderStyle.None;
                 ButtonText.ForeColor = this.ForeColor;
             }
         }
 
         /// <summary>
-        /// 鼠标移动到控件上方显示的图片
+        /// 按钮点下之后的图片
         /// </summary>
-        private Image backImageMove = global::ProjectMS.Properties.Resources.菜单按钮T;
+        private Image backImageT = global::ProjectMS.Properties.Resources.菜单按钮T;
         [Description("鼠标移动到控件上方显示的图片")]
-        public Image BackImageMove
+        public Image BackImageT
         {
-            get { return backImageMove; }
-            set { backImageMove = value; }
+            get { return backImageT; }
+            set { backImageT = value; }
         }
         /// <summary>
-        /// 鼠标离开控件显示的图片
+        /// 按钮松开的图片
         /// </summary>
-        private Image backImageLeave = global::ProjectMS.Properties.Resources.菜单按钮F;
+        private Image backImageF = global::ProjectMS.Properties.Resources.菜单按钮F;
         [Description("鼠标离开控件显示的图片")]
-        public Image BackImageLeave
+        public Image BackImageF
         {
-            get { return backImageLeave; }
+            get { return backImageF; }
             set
             {
-                backImageLeave = value;
-                ButtonBackPic.Image = backImageLeave;
+                backImageF = value;
+                ButtonBackPic.Image = backImageF;
             }
         }
         /// <summary>

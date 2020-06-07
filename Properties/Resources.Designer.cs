@@ -61,6 +61,72 @@ namespace ProjectMS.Properties {
         }
         
         /// <summary>
+        ///   查找类似 #jet
+        ///0	0	144
+        ///0	0	160
+        ///0	0	176
+        ///0	0	192
+        ///0	0	208
+        ///0	0	224
+        ///0	0	240
+        ///0	0	255
+        ///0	16	255
+        ///0	32	255
+        ///0	48	255
+        ///0	64	255
+        ///0	80	255
+        ///0	96	255
+        ///0	112	255
+        ///0	128	255
+        ///0	144	255
+        ///0	160	255
+        ///0	176	255
+        ///0	192	255
+        ///0	208	255
+        ///0	224	255
+        ///0	240	255
+        ///0	255	255
+        ///16	255	240
+        ///32	255	224
+        ///48	255	208
+        ///64	255	192
+        ///80	255	176
+        ///96	255	160
+        ///112	255	144
+        ///128	255	128
+        ///144	255	112
+        ///160	255	96
+        ///176	255	80
+        ///192	255	64
+        ///208	255	48
+        ///224	255	32
+        ///240	255	16
+        ///255	255	0
+        ///255	240	0
+        ///255	224	0
+        ///255	208	0
+        ///255	192	0
+        ///255	176	0
+        ///255	160	0
+        ///255	 [字符串的其余部分被截断]&quot;; 的本地化字符串。
+        /// </summary>
+        internal static string ColorBar {
+            get {
+                return ResourceManager.GetString("ColorBar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找 System.Drawing.Bitmap 类型的本地化资源。
+        /// </summary>
+        internal static System.Drawing.Bitmap icons8_add_32 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_add_32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   查找 System.Drawing.Bitmap 类型的本地化资源。
         /// </summary>
         internal static System.Drawing.Bitmap 窗口图标_32 {

@@ -1,4 +1,5 @@
-﻿using ProjectMS.Core.CardSetting;
+﻿using ProjectMS.Core.BearingFrm;
+using ProjectMS.Core.CardSetting;
 using ProjectMS.Core.custom_control;
 using ProjectMS.Core.ErrorManager;
 using System;
@@ -59,6 +60,7 @@ namespace ProjectMS
             //  添加菜单按钮
             var 主界面Menu = new MenuButton(menu_font, "主界面", menu_height);
             MenuButtons.Add(new Tuple<MenuButton, bool>(主界面Menu,true));
+            主界面Menu.Click += 主界面Menu_Click;
 
             var 设置Menu = new MenuButton(menu_font, "设置", menu_height);
             MenuButtons.Add(new Tuple<MenuButton, bool>(设置Menu, true));
@@ -85,6 +87,13 @@ namespace ProjectMS
                 }
             }
 
+        }
+        BearingFrom bearingform = new BearingFrom();
+        private void 主界面Menu_Click(object sender, EventArgs e)
+        {
+            MenuButton b = (MenuButton)sender;
+            if (b.Btnchecked)
+                ChgFrm(Middle_panel, bearingform);
         }
 
         CardSettingFrm cardsettingfrm = new CardSettingFrm();
