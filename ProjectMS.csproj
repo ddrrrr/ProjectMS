@@ -54,6 +54,7 @@
     <Reference Include="System.Data.SQLite.Linq, Version=1.0.113.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
       <HintPath>packages\System.Data.SQLite.Linq.1.0.113.0\lib\net45\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -111,6 +112,37 @@
     <Compile Include="Core\ErrorManager\ErrorManager.cs" />
     <Compile Include="Core\PropertyBase\CustomInt.cs" />
     <Compile Include="Core\PropertyBase\CustomString.cs" />
+    <Compile Include="Core\SignalProcess\ChartForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\SignalProcess\ChartForm.Designer.cs">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\SignalProcess\FFT\fft.cs" />
+    <Compile Include="Core\SignalProcess\FFT\fftbase.cs" />
+    <Compile Include="Core\SignalProcess\Filter\FilterCollection.cs" />
+    <Compile Include="Core\SignalProcess\Filter\FilterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\SignalProcess\Filter\FilterForm.Designer.cs">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\SignalProcess\Filter\IFilter.cs" />
+    <Compile Include="Core\SignalProcess\Filter\均值滤波.cs" />
+    <Compile Include="Core\SignalProcess\Filter\无滤波器.cs" />
+    <Compile Include="Core\SignalProcess\Filter\限幅滤波.cs" />
+    <Compile Include="Core\SignalProcess\ISignalProcess.cs" />
+    <Compile Include="Core\SignalProcess\RUL\FeatureNet.cs" />
+    <Compile Include="Core\SignalProcess\RUL\RegLSTM.cs" />
+    <Compile Include="Core\SignalProcess\RUL\rmsProcess.cs" />
+    <Compile Include="Core\SignalProcess\RUL\rulProcess.cs" />
+    <Compile Include="Core\SignalProcess\STFT\STFTForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Core\SignalProcess\STFT\STFTForm.Designer.cs">
+      <DependentUpon>STFTForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\SignalProcess\STFT\STFTProcess.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -137,6 +169,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Core\ErrorManager\ErrorForm.resx">
       <DependentUpon>ErrorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\SignalProcess\ChartForm.resx">
+      <DependentUpon>ChartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\SignalProcess\Filter\FilterForm.resx">
+      <DependentUpon>FilterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Core\SignalProcess\STFT\STFTForm.resx">
+      <DependentUpon>STFTForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -181,6 +222,7 @@
   <ItemGroup>
     <None Include="Resources\ColorBar.txt" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
